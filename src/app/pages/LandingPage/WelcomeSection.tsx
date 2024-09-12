@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import YourSVG from "@/app/images/welcome.svg"; // Update with the path to your SVG image
+import YourSVG from "@/app/images/welcome.svg";
 
 const welcomeVariants = {
   hidden: { opacity: 0, y: 50 },
