@@ -1,6 +1,5 @@
 "use client";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image"; // For optimized image loading
 import feature1 from "@/app/images/feature1.jpg";
 import feature2 from "@/app/images/feature2.jpg";
