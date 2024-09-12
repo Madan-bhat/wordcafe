@@ -16,33 +16,7 @@ const welcomeVariants = {
   },
 };
 
-const liquidVariants = {
-  hidden: { clipPath: "inset(0% 0% 100% 0%)" },
-  visible: {
-    clipPath: "inset(0% 0% 0% 0%)",
-    transition: { duration: 2, ease: [0.22, 1, 0.36, 1] },
-  },
-};
-
 export default function Home() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const controls = useAnimation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsScrolled(true);
-        controls.start("hidden");
-      } else {
-        setIsScrolled(false);
-        controls.start("visible");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [controls]);
-
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Navbar */}
