@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import YourSVG from "@/app/images/welcome.svg";
+import YourSVG from "@/app/images/welcome.svg"; // Update with the path to your SVG image
 
 const welcomeVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -27,10 +27,11 @@ const buttonVariants = {
 export default function WelcomeSection() {
   return (
     <section
-      className="hero min-h-screen relative z-10 bg-cover bg-center flex flex-col md:flex-row justify-center items-center overflow-hidden px-4"
-      style={{ backgroundImage: `url('/images/image_background.png')` }}
+      className="hero min-h-screen relative z-10 bg-cover bg-center flex flex-col md:flex-row justify-center items-center overflow-hidden px-4 py-6"
+      style={{
+        backgroundImage: `url('/images/image_background.png')`,
+      }}
     >
-      {/* Animated Background */}
       <div
         className="absolute top-0 left-0 w-full h-full bg-black opacity-40"
         style={{
@@ -40,15 +41,15 @@ export default function WelcomeSection() {
 
       {/* Hero Content */}
       <motion.div
-        className="hero-content relative z-20 flex flex-col md:flex-row items-center md:items-start md:justify-between w-full"
+        className="hero-content  relative z-20 flex flex-col md:flex-row items-center md:items-start md:justify-between w-full"
         initial="hidden"
         animate="visible"
         variants={welcomeVariants}
       >
         {/* Text Content */}
-        <div className="md:w-1/2 ml-4 text-center md:text-left mb-8 md:mb-0">
+        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 px-4">
           <motion.h1
-            className="text-5xl ml-4 md:text-7xl font-extrabold mb-8 tracking-tight text-white"
+            className="text-4xl mt-24 md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight text-white"
             whileHover={{ scale: 1.05 }} // Zoom-in effect on hover
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
@@ -56,7 +57,7 @@ export default function WelcomeSection() {
           </motion.h1>
 
           <motion.p
-            className="text-base md:text-xl max-w-2xl mb-6 px-6 text-white"
+            className="text-sm md:text-lg lg:text-xl max-w-2xl mb-6 text-white"
             variants={textVariants}
           >
             Transform your handwritten stories into digital ones. A platform
@@ -66,10 +67,10 @@ export default function WelcomeSection() {
           </motion.p>
 
           <motion.p
-            className="text-base md:text-xl max-w-2xl mb-12 px-6 text-white"
+            className="text-sm md:text-lg lg:text-xl max-w-2xl mb-8 text-white"
             variants={textVariants}
           >
-            Whether you’re a seasoned author or just starting out, our tools are
+            Whether you're a seasoned author or just starting out, our tools are
             designed to support you in every step of your writing journey.
             Welcome to a community where stories come to life and creativity
             knows no bounds.
@@ -78,18 +79,26 @@ export default function WelcomeSection() {
           {/* Call-to-Action Button */}
           <motion.a
             href="#features"
-            className="text-xl ml-6 md:text-2xl bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-lg inline-block"
+            className="text-lg md:text-xl bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-4 md:px-6 rounded-lg inline-block"
             whileHover="hover"
             variants={buttonVariants}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             Explore Features
           </motion.a>
+          <motion.a
+            href="#about"
+            className="text-lg ml-4 bg-transparent border-2 border-white hover:bg-white hover:text-black py-3 px-4 rounded-lg"
+            whileHover="hover"
+            variants={buttonVariants}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            Learn More
+          </motion.a>
         </div>
 
-        {/* SVG Image */}
         <motion.div
-          className="md:w-1/2 ml-4 flex justify-center items-center"
+          className="md:w-1/2 flex justify-center items-center px-4"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -99,7 +108,7 @@ export default function WelcomeSection() {
             alt="Illustration"
             width={500}
             height={500}
-            className="object-contain"
+            className="object-contain mr-8 md:mr-0 w-full h-auto max-w-xs md:max-w-md lg:max-w-lg"
           />
         </motion.div>
       </motion.div>
@@ -114,14 +123,14 @@ export default function WelcomeSection() {
           }
         }
 
-        .hero-content:hover .text-5xl,
-        .hero-content:hover .text-base {
+        .hero-content:hover .text-4xl,
+        .hero-content:hover .text-sm {
           transform: scale(1.1); /* Zoom effect */
           transition: transform 0.5s ease-in-out;
         }
 
-        .text-5xl,
-        .text-base {
+        .text-4xl,
+        .text-sm {
           transition: transform 0.3s ease;
         }
       `}</style>

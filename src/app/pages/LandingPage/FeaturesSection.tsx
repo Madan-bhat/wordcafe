@@ -85,7 +85,7 @@ export default function FeaturesSection() {
           animate="visible"
         >
           <motion.div
-            className="md:w-1/2 ml-8 text-left text-white mb-8 md:mb-0"
+            className="ml-0 md:ml-8 md:w-1/2 text-left text-white mb-8 md:mb-0"
             variants={itemVariants}
             whileHover={{
               scale: 1.05,
