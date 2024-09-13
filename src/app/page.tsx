@@ -5,6 +5,7 @@ import FeaturesSection from "./pages/LandingPage/FeaturesSection";
 import AboutUsSection from "./pages/LandingPage/AboutUs";
 import DownloadSection from "./pages/LandingPage/Download";
 import Footer from "./pages/LandingPage/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
         </form>
       </section>
       <Footer />
+      <Analytics />
     </div>
   );
 }
